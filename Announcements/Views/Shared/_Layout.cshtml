@@ -33,7 +33,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0" asp-controller="Announcement" asp-action="Index">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" name="SearchString" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-primary" type="submit">Search</button>
             </form>
         </div>
     </nav>
@@ -42,13 +42,9 @@
         @RenderBody()
     </div>
 
-    <footer class="footer bg-secondary navbar">
+    <footer class="fixed-bottom" style="padding-left: 40px;background-color: dimgrey">
         <p>&copy; 2018 - Announcements</p>
     </footer>
-
-    <div class="footer">
-        <p>&copy; 2018 - Announcements</p>
-    </div>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

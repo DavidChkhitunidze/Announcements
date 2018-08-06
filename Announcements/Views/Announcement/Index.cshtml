@@ -11,7 +11,7 @@
 @foreach (var announcement in Model)
 {
     <div class="card" style="width: 15rem; display: inline-block; margin: 10px;">
-        <img class="card-img-top" src="~/images/content/@announcement.ImageName" alt="Image">
+        <img class="card-img-top" src="~/images/content/@announcement.ImageName" alt="Image" />
         <div class="card-body">
             <h5 class="card-title">@announcement.Title</h5>
             <a asp-action="Details" asp-route-id="@announcement.ID" class="btn btn-primary">Details...</a>

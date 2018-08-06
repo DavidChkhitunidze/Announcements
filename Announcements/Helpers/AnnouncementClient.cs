@@ -641,7 +641,7 @@ namespace Announcements.Helpers
         [Newtonsoft.Json.JsonProperty("phone", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(20, MinimumLength = 1)]
-        [System.ComponentModel.DataAnnotations.RegularExpression(@"^(1-)?\(\d{3}\)-\d{3}-\d{3}$")]
+        [System.ComponentModel.DataAnnotations.RegularExpression(@"^(1-)?\d{3}-\d{3}-\d{3}$", ErrorMessage = "Number must match pattern: 000-000-000")]
         public string Phone
         {
             get { return _phone; }
