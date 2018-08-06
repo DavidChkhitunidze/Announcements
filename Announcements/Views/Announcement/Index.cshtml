@@ -1,0 +1,30 @@
+﻿@model IEnumerable<AnnouncementGettingViewModel>
+
+@{
+    ViewData["Title"] = "Announcements";
+}
+
+<div>
+    <a asp-action="Create" class="btn btn-outline-primary my-2 my-sm-0">Create New</a>
+</div>
+
+@foreach (var announcement in Model)
+{
+    <div class="card" style="width: 15rem; display: inline-block; margin: 10px;">
+        <img class="card-img-top" src="~/images/content/@announcement.ImageName" alt="Image">
+        <div class="card-body">
+            <h5 class="card-title">@announcement.Title</h5>
+            <a asp-action="Details" asp-route-id="@announcement.ID" class="btn btn-primary">Details...</a>
+        </div>
+    </div>
+}
+
+@{
+    var prevDisabled = ViewBag.PrevPage == null ? "disabled" : "";
+    var nextDisabled = ViewBag.NextPage == null ? "disabled" : "";
+}
+<div style="padding-top: 15px;">
+    <a asp-action="Index" asp-route-pageNumber="@(ViewBag.PageNumber - 1)" class="btn btn-outline-primary my-2 my-sm-0 @prevDisabled">Previous</a>
+    <a asp-action="Index" asp-route-pageNumber="@(ViewBag.PageNumber + 1)" class="btn btn-outline-primary my-2 my-sm-0 @nextDisabled">Next</a>
+</div>
+
